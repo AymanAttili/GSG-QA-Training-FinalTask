@@ -1,0 +1,9 @@
+node_modules
+dist/
+.env
+.DS_Store
+coverage/
+.vscode/
+allure-results
+cypress/results
+cypress/screenshots
