@@ -29,6 +29,16 @@ import LoginPage from "./PageObjects/LoginPage";
 const loginPage: LoginPage = new LoginPage();
 
 
+declare global {
+    namespace Cypress {
+        interface Chainable {
+            logout: () => Chainable<any>;
+            login: (userName:string, password:string) => Chainable<any>;
+        }
+    }
+
+}
+
 function logout(){
     cy.api('GET','https://opensource-demo.orangehrmlive.com/web/index.php/auth/logout',{})
     cy.clearCookies()
@@ -47,6 +57,7 @@ function login(userName:string = 'Admin', password:string = 'admin123'){
     }
 
     loginPage.actions.clickLogin();
+
 }
 
 
