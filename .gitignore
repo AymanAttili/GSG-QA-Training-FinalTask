@@ -7,3 +7,4 @@ coverage/
 allure-results
 cypress/results
 cypress/screenshots
+cypress/downloads

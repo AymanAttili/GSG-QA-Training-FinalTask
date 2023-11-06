@@ -1,8 +1,6 @@
 const { defineConfig } = require("cypress");
-const allureWriter = require('@shelex/cypress-allure-plugin/writer');
-import * as path from 'path';
-import * as XLSX from 'xlsx'
-import { writeFileSync } from 'fs';
+import { configureAllureAdapterPlugins } from '@mmisty/cypress-allure-adapter/plugins';
+const fs = require('fs-extra');
 
 module.exports = defineConfig({
   projectId: "afqxok",
@@ -10,22 +8,19 @@ module.exports = defineConfig({
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
     baseUrl: "https://opensource-demo.orangehrmlive.com",
     setupNodeEvents(on:any, config:any) {
-      on('task', {
-        convertXlsxToJSON(xlsxPath: any){
-          const workbook = XLSX.readFile(xlsxPath)
-          const worksheet = workbook.Sheets[workbook.SheetNames[0]]
-          const jsonData = XLSX.utils.sheet_to_json(worksheet)
+      configureAllureAdapterPlugins(on, config);
+      require('@cypress/grep/src/plugin')(config);
 
-          const fileName = path.basename(xlsxPath, '.xlsx');
-          const jsonFilePath = `cypress/fixtures/${fileName}.json`;
-          writeFileSync(jsonFilePath, JSON.stringify(jsonData,null,1));
-          
+      // Create Task Reports directory before each run
+      const taskReportsDir = './TaskReports';
+      fs.ensureDirSync(taskReportsDir);
+      on('task', {
+        createTaskReportFolder: (taskName: string) => {
+          const taskReportFolder = `${taskReportsDir}/${taskName}`;
+          fs.ensureDirSync(taskReportFolder);
           return null;
         }
       })
-
-      allureWriter(on, config);
-      require('@cypress/grep/src/plugin')(config);
       return config;
     },
     env: {

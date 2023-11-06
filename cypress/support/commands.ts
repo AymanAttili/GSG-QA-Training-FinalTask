@@ -24,14 +24,32 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-declare namespace Cypress {
-    interface Chainable<Subject> {
-        getByCy: typeof getByCy;
+import LoginPage from "./PageObjects/LoginPage";
+
+const loginPage: LoginPage = new LoginPage();
+
+
+function logout(){
+    cy.api('GET','https://opensource-demo.orangehrmlive.com/web/index.php/auth/logout',{})
+    cy.clearCookies()
+    cy.visit('/');
+}
+
+function login(userName:string = 'Admin', password:string = 'admin123'){
+    // add intercept to make dynamic wait
+    cy.visit('/');
+
+    if(userName !== ''){
+        loginPage.actions.enterUsername(userName);
     }
+    if(password !== ''){
+        loginPage.actions.enterPassword(password);
+    }
+
+    loginPage.actions.clickLogin();
 }
 
-function getByCy(field: string){
-    return cy.get(`.${field}`);
-}
 
-Cypress.Commands.add('getByCy', getByCy);
+
+Cypress.Commands.add('logout', logout)
+Cypress.Commands.add('login', login)

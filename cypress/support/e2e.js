@@ -21,6 +21,7 @@ import '@cypress/grep'
 const registerCypressGrep = require('@cypress/grep')
 registerCypressGrep()
 import 'cypress-file-upload';
+import '@mmisty/cypress-allure-adapter/support';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
