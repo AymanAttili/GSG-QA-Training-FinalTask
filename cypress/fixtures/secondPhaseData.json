@@ -1,0 +1,36 @@
+{
+  "employee": {
+    "firstName": "3llawi",
+    "middleName": "7abibGalbi",
+    "lastName": "Abu-Hsain",
+    "empNumber": 267
+  },
+  "user": {
+    "username": "3llawi",
+    "password": "admin123",
+    "status": true,
+    "userRoleId": 2,
+    "empNumber": 267
+  },
+  "event": {
+    "name": "3llawi's Event",
+    "description": "",
+    "status": true
+  },
+  "expenseType": {
+    "name": "3llawi's Expense",
+    "description": "",
+    "status": true
+  },
+  "claimRequest": {
+    "claimEventId": 168,
+    "currencyId": "JOD"
+  },
+  "expense": {
+    "expenseTypeId": 161,
+    "date": "2023-11-11",
+    "amount": "100.00",
+    "note": "3llawi 7abibGalbi Abu-Hsain"
+  },
+  "currency": "Jordanian Dinar"
+}
