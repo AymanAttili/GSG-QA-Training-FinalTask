@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Nov 11 10:51:09 IST 2023","Sat Nov 11 10:51:48 IST 2023","39104","Phase2","","","","","Initiated claim request Approval flow",""
+"passed","Sat Nov 11 10:50:31 IST 2023","Sat Nov 11 10:51:09 IST 2023","38214","Phase2","","","","","Submitted claim request Rejection flow",""
+"passed","Sat Nov 11 10:49:16 IST 2023","Sat Nov 11 10:50:31 IST 2023","74701","Phase2","","","","","Submitted claim request Approval flow",""

@@ -1,0 +1,1 @@
+{"method":"POST","url":"/web/index.php/api/v2/claim/requests","body":{"claimEventId":122,"currencyId":"JOD"}}
