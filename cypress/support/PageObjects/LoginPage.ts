@@ -16,3 +16,4 @@ export default class LoginPage{
         clickLogin: () => this.elements.loginBTN().click()
     }
 }
+
