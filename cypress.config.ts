@@ -38,7 +38,8 @@ module.exports = defineConfig({
       json: true,
       toConsole: true
     },
-    videosFolder: 'allure-results/',
+    video: true,
+    videosFolder: 'videos/',
     screenshotOnRunFailure: true,  
     allureAttachRequests:true
   },
