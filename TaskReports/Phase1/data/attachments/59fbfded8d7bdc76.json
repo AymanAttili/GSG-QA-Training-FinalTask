@@ -1,0 +1,1 @@
+{"method":"POST","url":"/web/index.php/api/v2/admin/locations","body":{"name":"Burgineer","countryCode":"PS","province":"","city":"","address":"","zipCode":"","phone":"","fax":"","note":""}}

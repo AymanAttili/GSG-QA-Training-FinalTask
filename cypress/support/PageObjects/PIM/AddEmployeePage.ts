@@ -6,6 +6,7 @@ export default class AddEmployeePage{
     URLs = {
         employees: '/web/index.php/api/v2/pim/employees',
         users: '/web/index.php/api/v2/admin/users'
+
     }
 
     createEmployee = (empData: ICreateEmployeePayload) => { 
