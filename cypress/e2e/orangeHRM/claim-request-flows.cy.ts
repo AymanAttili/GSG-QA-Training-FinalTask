@@ -112,7 +112,7 @@ describe('Phase2', () => {
 
             // The admin search for submitted claim
             employeeClaimsPage.visitPage();
-            const EmployeeFullName: string = employee.firstName + ' ' + employee.middleName + ' ' + employee.lastName;
+            const EmployeeFullName: string = `${employee.firstName} ${employee.middleName} ${employee.lastName}`;
             employeeClaimsPage.actions.enterEmployeeName(EmployeeFullName);
             employeeClaimsPage.actions.clickSearchBTN();
             employeeClaimsPage.viewClaimDetails(1);
@@ -167,7 +167,7 @@ describe('Phase2', () => {
 
             // The admin search for submitted claim            
             employeeClaimsPage.visitPage();
-            const EmployeeFullName: string = employee.firstName + ' ' + employee.middleName + ' ' + employee.lastName;
+            const EmployeeFullName: string = `${employee.firstName} ${employee.middleName} ${employee.lastName}`;
             employeeClaimsPage.actions.enterEmployeeName(EmployeeFullName);
             employeeClaimsPage.actions.clickSearchBTN();
             employeeClaimsPage.viewClaimDetails(1);
